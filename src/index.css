@@ -1,15 +1,15 @@
 :root {
   --text: #fbfbf2;
-  --prmary-color: #090446;
+  --prmary-color: #24272c;
   --secondary-color: #fbb13c;
   --light-blue: #6699cc;
   --rosy-brown: #dc9596;
 }
 
 body {
-  background-color: var(--prmary-color);
   width: 100%;
-  font-family: "Barlow", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--prmary-color);
 }
 
 .banner {

@@ -1,42 +1,49 @@
 import React from "react";
 import "./App.css";
-import Nav from "./components/Nav";
-import Main from "./components/Main";
-import Banner from "./components/Banner";
-import About from "./components/About";
-import Interest from "./components/Interest";
-import Projects from "./components/Projects";
-import GetInTouch from "./components/GetInTouch";
-import Footer from "./components/Footer";
+import { AppColorsData } from "./themes/ColoPallets";
+import NavBar from "./UIComponents/NavBar";
+import Picture from "./UIComponents/Picture";
+import AboutMe from "./UIComponents/AboutMe";
 import {
-  btnList,
-  iconsList,
-  menuData,
-  myIntroData,
-  headerData,
-  abtData,
-  skillData,
-  footerData,
-  projectsData,
+  AbtMeButtonData,
+  BriefAbtMeData,
+  CertificatesData,
+  ContactMeData,
+  ExperienceData,
+  ProjectsData,
+  SkillsData,
 } from "./data";
+import BriefAbtMe from "./UIComponents/BriefAbtMe";
+import Projects from "./UIComponents/Projects";
+import Skills from "./UIComponents/Skills";
+import Certifications from "./UIComponents/Certifications";
+import Experience from "./UIComponents/Experience";
+import ContactMe from "./UIComponents/ContactMe";
+
 
 function App() {
   return (
-    <div>
-      <Nav header={headerData} menuItems={menuData} />
-      <Main>
-        <Banner
-          myintro={myIntroData}
-          socialMediaIcons={iconsList}
-          bannerButtons={btnList}
-        />
-        <About {...abtData} />
-        <Interest data={skillData} />
-        <Projects data={projectsData} />
-
-        <GetInTouch />
-      </Main>
-      <Footer data={footerData} />
+    <div
+      style={{
+        width: "1305",
+        height: "7019",
+        margin: "50px 79px 0px 79px",
+        padding: "95px 112px 167px 135px",
+        borderRadius: "24px",
+        boxShadow:
+          "inset 10px 10px 20px 0 rgba(0, 0, 0, 0.25), inset -10px -10px 20px 0 rgba(255, 255, 255, 0.25)",
+        backgroundColor: AppColorsData.primaryDarkColor,
+      }}
+    >
+      <NavBar />
+      <Picture />
+      <AboutMe {...AbtMeButtonData} />
+      <BriefAbtMe {...BriefAbtMeData} />
+      <Projects {...ProjectsData} />
+      <Skills {...SkillsData} />
+      <Certifications {...CertificatesData} />
+      <Experience {...ExperienceData} />
+      <ContactMe {...ContactMeData}/>
     </div>
   );
 }

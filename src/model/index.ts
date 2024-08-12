@@ -1,93 +1,63 @@
-export interface Header {
-  title: string;
-  href: string;
+export interface AppColorsProps {
+  primaryDarkColor: string;
+  secondaryDarkColor: string;
+  whiteColor: string;
+  violetColor: string;
 }
 
-export interface MenuItems {
-  label: string;
-  link: string;
-  isGetInTouchBtn?: boolean;
+export interface AboutMeProps {
+  greet: string;
+  intro: string;
+  profession: string;
+  AbtMeTxt: string;
+  AbtMeButtons: Array<string>;
 }
 
-export interface NavProps {
-  header: Header;
-  menuItems: Array<MenuItems>;
+export interface BriefAbtProps {
+  text: string;
+  abtPara: string;
 }
 
-export interface MyIntro {
-  introText1: string;
-  introText2: string;
+export interface ProjectDescData {
+  projectImg: string;
+  projectDesc: string;
+  projectName: string;
+  projGitLink: string;
 }
 
-export interface SocialMediaIconsProps {
-  mediaIconLink: string;
-  iconImg: string;
+export interface ProjectsProps {
+  project: string;
+  projButtons: Array<string>;
+  projectDataInfo: Array<ProjectDescData>;
 }
 
-export interface BannerButtonsProps {
-  btnClass: string;
-  anchorTagClass: string;
-  link: string;
-  btnText: string;
+export interface SkillsDescData {
+  skillsImg: string;
+  skillsButtons: string;
+  skillsTypes: Array<string>;
+  skillsTypesImg: Array<string>;
 }
 
-export interface BannerProps {
-  myintro: MyIntro;
-  socialMediaIcons: Array<SocialMediaIconsProps>;
-  bannerButtons: Array<BannerButtonsProps>;
+export interface SkillsProps {
+  SkillsTxt: string;
+  SkillsDescDataInfo: Array<SkillsDescData>;
 }
 
-export interface AboutProps {
-  title: string;
-  desc: string;
+export interface CertificationsProps {
+    certificateTxt: string;
+    certificateImg: Array<string>;
 }
 
-export interface SkillBoxProps {
-  skillName: string;
-  skills: string;
+export interface ExperienceProps {
+    experienceTxt: string;
+    experienceButtons: Array<string>;
+    workExperience: string;
+    education: string;
 }
 
-export interface InterestProps {
-  data: Array<SkillBoxProps>;
-}
 
-export interface BigBoxProps {
-  imgSrc: string;
-  alt: string;
-}
+export interface ContactMeProps {
+  contactTxt : string;
+  contactDetails: Array<string>
 
-export interface TopicProps {
-  topicName: string;
-  topicName2: string;
-  briefMe: string;
-}
-
-export interface TechIconsProps {
-  techImg: string;
-}
-
-export interface DataSource {
-  bigBox: BigBoxProps;
-  topic: TopicProps;
-  techIcons: Array<TechIconsProps>;
-}
-export interface ProjectProps {
-  data: Array<DataSource>;
-}
-
-export interface ListOfProjectsProps {
-  bigBox: BigBoxProps;
-  topic: TopicProps;
-  techIcons: Array<TechIconsProps>;
-  isFirstItem?: boolean;
-}
-
-export interface FooterLinkProp {
-  footClassName: string;
-  link: string;
-  txt: string;
-}
-
-export interface FooterProps {
-  data: Array<FooterLinkProp>;
 }
