@@ -2,12 +2,13 @@ import React from "react";
 import { BriefAbtProps } from "../model";
 import { Box, Typography } from "@mui/material";
 import { AppColorsData } from "../themes/ColoPallets";
+import AboutGirlIcon from "../assets/Images/AboutGirl";
 
 function BriefAbtMe({ text, abtPara }: Readonly<BriefAbtProps>) {
   return (
     <Box
       sx={{
-        width: "1006px",
+        width: "100%",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -15,19 +16,30 @@ function BriefAbtMe({ text, abtPara }: Readonly<BriefAbtProps>) {
         marginTop: "154px",
       }}
     >
-      <div
+      <Box
         style={{
-          width: "422px",
-          height: "422px",
+          width: "429px",
+          height: "438px",
         }}
       >
-        <img
-          src="\GirlImage2.png"
-          alt="My Portarit2"
-          height="100%"
-          width="100%"
-        ></img>
-      </div>
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "29px",
+            overflow: "hidden",
+            boxShadow:
+              "25px 25px 60px 0px rgba(0, 0, 0, 0.25), -25px -25px 60px 0px rgba(255, 255, 255, 0.05)",
+            background:
+              "linear-gradient(320.11deg, #2F3339 14.78%, #15181C 95.73%)",
+            "& .MuiSvgIcon-root": {
+              fontSize: "422px",
+            },
+          }}
+        >
+          <AboutGirlIcon />
+        </Box>
+      </Box>
       <div
         style={{
           width: "456px",

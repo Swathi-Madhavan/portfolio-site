@@ -1,7 +1,8 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { AboutMeProps } from "../model";
 import { AppColorsData } from "../themes/ColoPallets";
+import PrimaryButton from "../styledComponents/PrimaryButton";
 
 function AboutMe({
   AbtMeButtons,
@@ -25,10 +26,10 @@ function AboutMe({
         sx={{
           fontFamily: "Poppins",
           fontSize: "38px",
-          fontWeight: "normal",
+          fontWeight: "400",
           fontStretch: "normal",
           fontStyle: "normal",
-          lineHeight: "0.63",
+          lineHeight: "24px",
           letterSpacing: "0.38px",
           textAlign: "center",
           textTransform: "none",
@@ -41,10 +42,8 @@ function AboutMe({
         sx={{
           fontFamily: "Poppins",
           fontSize: "62px",
-          fontWeight: "normal",
-          fontStretch: "normal",
-          fontStyle: "normal",
-          lineHeight: "0.63",
+          fontWeight: "700",
+          lineHeight: "24px",
           letterSpacing: "0.38px",
           textAlign: "center",
           textTransform: "none",
@@ -59,9 +58,7 @@ function AboutMe({
           fontFamily: "Poppins",
           fontSize: "38px",
           fontWeight: "500",
-          fontStretch: "normal",
-          fontStyle: "normal",
-          lineHeight: "1.37",
+          lineHeight: "52px",
           letterSpacing: "0.38px",
           textAlign: "center",
           marginTop: "8px",
@@ -72,7 +69,7 @@ function AboutMe({
       </Typography>
       <div
         style={{
-          width: "695px",
+          width: "100%",
           height: "145px",
           marginTop: "28px",
         }}
@@ -82,9 +79,7 @@ function AboutMe({
             fontFamily: "Poppins",
             fontSize: "21px",
             fontWeight: "300",
-            fontStretch: "normal",
-            fontStyle: "normal",
-            lineHeight: "1.33",
+            lineHeight: "28px",
             letterSpacing: "0.38px",
             textAlign: "center",
             color: AppColorsData.whiteColor,
@@ -93,35 +88,19 @@ function AboutMe({
           {AbtMeTxt}
         </Typography>
       </div>
-      <div style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginTop: "30px",
-        gap: "76px"
-      }}>
-        {AbtMeButtons.map((item, index) => <Button key={item} sx={{
-            width: "148px",
-            height: "60px",
-            padding: "18px 27px 18px 28px",
-            borderRadius: "24px",
-            boxShadow:
-              "5px 5px 10px 0 rgba(0, 0, 0, 0.25), -5px -5px 10px 0 rgba(255, 255, 255, 0.25)",
-            backgroundColor: AppColorsData.secondaryDarkColor,
-            color: AppColorsData.whiteColor,
-            fontFamily: "Poppins",
-            fontSize: "22px",
-            fontStretch: "normal",
-            fontStyle: "normal",
-            lineHeight: "1.09",
-            letterSpacing: "0.38px",
-            textAlign: "center",
-            textTransform: "none"
-
-        }}>
-            {item}
-        </Button>)}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginTop: "30px",
+          gap: "76px",
+        }}
+      >
+        {AbtMeButtons.map((item, index) => (
+          <PrimaryButton key={item}>{item}</PrimaryButton>
+        ))}
       </div>
     </Box>
   );

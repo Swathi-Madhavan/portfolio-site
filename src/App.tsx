@@ -20,19 +20,17 @@ import Certifications from "./UIComponents/Certifications";
 import Experience from "./UIComponents/Experience";
 import ContactMe from "./UIComponents/ContactMe";
 
-
 function App() {
   return (
     <div
       style={{
-        width: "1305",
-        height: "7019",
-        margin: "50px 79px 0px 79px",
+        width: "100%",
         padding: "95px 112px 167px 135px",
-        borderRadius: "24px",
-        boxShadow:
-          "inset 10px 10px 20px 0 rgba(0, 0, 0, 0.25), inset -10px -10px 20px 0 rgba(255, 255, 255, 0.25)",
         backgroundColor: AppColorsData.primaryDarkColor,
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        flex: 1,
       }}
     >
       <NavBar />
@@ -43,7 +41,7 @@ function App() {
       <Skills {...SkillsData} />
       <Certifications {...CertificatesData} />
       <Experience {...ExperienceData} />
-      <ContactMe {...ContactMeData}/>
+      <ContactMe {...ContactMeData} />
     </div>
   );
 }

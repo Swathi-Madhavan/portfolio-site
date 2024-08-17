@@ -4,6 +4,9 @@ import { Box, Button, Typography } from "@mui/material";
 import { AppColorsData } from "../themes/ColoPallets";
 import LeftArrowIcon from "../assets/Images/UiIcons/LeftArrowIcon";
 import RightArrowIcon from "../assets/Images/UiIcons/RightArrowIcon";
+import PrimaryButton from "../styledComponents/PrimaryButton";
+import ForwardButton from "../styledComponents/ForwardButton";
+import FronEndIcon from "../assets/Images/FronEndIcon";
 
 function Skills({ SkillsTxt, SkillsDescDataInfo }: SkillsProps) {
   return (
@@ -29,7 +32,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: SkillsProps) {
           color: AppColorsData.whiteColor,
           textAlign: "left",
           display: "flex",
-          justifyContent: "flex-end"
+          justifyContent: "flex-end",
         }}
       >
         {SkillsTxt}
@@ -49,31 +52,12 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: SkillsProps) {
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "center",
-          marginTop: "87px"
+          marginTop: "87px",
         }}
       >
-        <Button
-          sx={{
-            width: "253px",
-            height: "56px",
-            borderRadius: "24px",
-            boxShadow:
-              "10px 10px 20px 0 rgba(0, 0, 0, 0.25), -10px -10px 20px 0 rgba(255, 255, 255, 0.25)",
-            backgroundColor: AppColorsData.secondaryDarkColor,
-            color: AppColorsData.whiteColor,
-            padding: "16px 16.2px 16px 17.2px",
-            fontFamily: "Poppins",
-            fontSize: "22px",
-            fontStretch: "normal",
-            fontStyle: "normal",
-            lineHeight: "1.09",
-            letterSpacing: "0.38px",
-            textAlign: "center",
-            textTransform: "none"
-          }}
-        >
+        <PrimaryButton sx={{}}>
           {SkillsDescDataInfo[0].skillsButtons}
-        </Button>
+        </PrimaryButton>
         <div
           style={{
             width: "100%",
@@ -84,34 +68,45 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: SkillsProps) {
             gap: "70px",
           }}
         >
-          <LeftArrowIcon
-            sx={{
-              fontSize: "80px",
-            }}
-          />
+          <ForwardButton>
+            <LeftArrowIcon />
+          </ForwardButton>
 
           <Box
             sx={{
-              width: "332px",
-              height: "332px",
-              margin: "138px 144px 159px 145px",
-              borderRadius: "50%",
-              overflow: "hidden",
+              width: "621px",
+              height: "629px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <img
-              src={SkillsDescDataInfo[0].skillsImg}
-              alt="Front end not found"
-              height="100%"
-              width="100%"
-            />
+            <Box
+              sx={{
+                width: "332px",
+                height: "332px",
+                // margin: "138px 144px 159px 145px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                border: "1px solid",
+                borderImageSource:
+                  "linear-gradient(147.8deg, #FFFFFF 22.87%, rgba(0, 0, 0, 0.65) 95.17%)",
+                boxShadow:
+                  "6px 6px 12px 0px rgba(0, 0, 0, 0.25),  -6px -6px 12px 0px rgba(255, 255, 255, 0.05)",
+
+                "& .MuiSvgIcon-root": {
+                  fontSize: "332px",
+                },
+              }}
+            >
+              <FronEndIcon />
+            </Box>
           </Box>
 
-          <RightArrowIcon
-            sx={{
-              fontSize: "80px",
-            }}
-          />
+          <ForwardButton>
+            <RightArrowIcon />
+          </ForwardButton>
         </div>
       </div>
     </Box>
