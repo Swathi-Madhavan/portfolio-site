@@ -7,6 +7,7 @@ import BrainIcon from "../assets/Images/BrainIcon";
 import MobileIcon from "../assets/Images/MobileIcon";
 import ComputerIcon from "../assets/Images/ComputerIcon";
 import BrainIconRect from "../assets/Images/BrainIconRect";
+import Divider from "../styledComponents/Divider";
 
 function Projects({
   project,
@@ -37,14 +38,7 @@ function Projects({
       >
         {project}
       </Typography>
-      <div
-        style={{
-          width: "100%",
-          height: "5px",
-          backgroundColor: "#7733ff",
-          marginTop: "31px",
-        }}
-      ></div>
+      <Divider />
       <div
         style={{
           width: "100%",

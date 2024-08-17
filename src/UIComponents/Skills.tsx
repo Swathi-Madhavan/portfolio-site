@@ -1,14 +1,15 @@
 import React from "react";
 import { SkillsProps } from "../model";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { AppColorsData } from "../themes/ColoPallets";
 import LeftArrowIcon from "../assets/Images/UiIcons/LeftArrowIcon";
 import RightArrowIcon from "../assets/Images/UiIcons/RightArrowIcon";
 import PrimaryButton from "../styledComponents/PrimaryButton";
 import ForwardButton from "../styledComponents/ForwardButton";
 import FronEndIcon from "../assets/Images/FronEndIcon";
+import Divider from "../styledComponents/Divider";
 
-function Skills({ SkillsTxt, SkillsDescDataInfo }: SkillsProps) {
+function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
   return (
     <Box
       sx={{
@@ -37,14 +38,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: SkillsProps) {
       >
         {SkillsTxt}
       </Typography>
-      <div
-        style={{
-          width: "100%",
-          height: "5px",
-          backgroundColor: "#7733ff",
-          marginTop: "31px",
-        }}
-      ></div>
+      <Divider />
       <div
         style={{
           width: "915px",

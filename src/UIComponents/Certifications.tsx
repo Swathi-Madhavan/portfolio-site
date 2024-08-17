@@ -2,6 +2,7 @@ import React from "react";
 import { CertificationsProps } from "../model";
 import { Box, Typography } from "@mui/material";
 import { AppColorsData } from "../themes/ColoPallets";
+import Divider from "../styledComponents/Divider";
 
 function Certifications({
   certificateTxt,
@@ -33,14 +34,7 @@ function Certifications({
       >
         {certificateTxt}
       </Typography>
-      <div
-        style={{
-          width: "100%",
-          height: "5px",
-          backgroundColor: "#7733ff",
-          marginTop: "31px",
-        }}
-      ></div>
+      <Divider />
       <div
         style={{
           width: "100%",

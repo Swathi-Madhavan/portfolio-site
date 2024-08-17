@@ -2,12 +2,13 @@ import React from "react";
 import { ExperienceProps } from "../model";
 import { Box, Typography } from "@mui/material";
 import { AppColorsData } from "../themes/ColoPallets";
+import Divider from "../styledComponents/Divider";
 
 function Experience({
   experienceTxt,
   experienceButtons,
   workExperience,
-}: ExperienceProps) {
+}: Readonly<ExperienceProps>) {
   return (
     <Box
       sx={{
@@ -19,7 +20,8 @@ function Experience({
         margin: "154px auto auto auto",
       }}
     >
-        <Typography sx={{
+      <Typography
+        sx={{
           fontFamily: "Poppins",
           fontSize: "34px",
           fontWeight: "500",
@@ -30,18 +32,12 @@ function Experience({
           color: AppColorsData.whiteColor,
           textAlign: "left",
           display: "flex",
-          justifyContent: "flex-end"
-        }}>
-            {experienceTxt}
-        </Typography>
-        <div
-        style={{
-          width: "100%",
-          height: "5px",
-          backgroundColor: "#7733ff",
-          marginTop: "31px",
+          justifyContent: "flex-end",
         }}
-      ></div>
+      >
+        {experienceTxt}
+      </Typography>
+      <Divider />
     </Box>
   );
 }

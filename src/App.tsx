@@ -31,6 +31,10 @@ function App() {
         display: "flex",
         flexDirection: "column",
         flex: 1,
+        margin: "50px 79px 0px 79px",
+        borderRadius: "24px",
+        boxShadow:
+          "inset 10px 10px 20px 0 rgba(0, 0, 0, 0.25), inset -10px -10px 20px 0 rgba(255, 255, 255, 0.05)",
       }}
     >
       <NavBar />
