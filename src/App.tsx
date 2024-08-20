@@ -9,7 +9,7 @@ import {
   BriefAbtMeData,
   CertificatesData,
   ContactMeData,
-  ExperienceData,
+  // ExperienceData,
   ProjectsData,
   SkillsData,
 } from "./data";
@@ -17,7 +17,7 @@ import BriefAbtMe from "./UIComponents/BriefAbtMe";
 import Projects from "./UIComponents/Projects";
 import Skills from "./UIComponents/Skills";
 import Certifications from "./UIComponents/Certifications";
-import Experience from "./UIComponents/Experience";
+// import Experience from "./UIComponents/Experience";
 import ContactMe from "./UIComponents/ContactMe";
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
       <Projects {...ProjectsData} />
       <Skills {...SkillsData} />
       <Certifications {...CertificatesData} />
-      <Experience {...ExperienceData} />
+      {/* <Experience {...ExperienceData} /> */}
       <ContactMe {...ContactMeData} />
     </div>
   );

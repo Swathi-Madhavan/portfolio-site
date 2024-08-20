@@ -6,8 +6,10 @@ import HamburgerMenu from "../styledComponents/HamburgerMenu";
 import styles from "./NavBar.module.scss";
 import { useState } from "react";
 import clsx from "clsx";
+import { getURLMapping } from "../utils/common";
+import React from "react";
 
-function NavBar() {
+export default function NavBar() {
   const [showMenuOptions, setShowMenuOptions] = useState(false);
 
   const handleChange = () => {
@@ -31,18 +33,17 @@ function NavBar() {
 
       <div className={styles.linksRoot}>
         {NavBarButtonsData.map((item) => (
-          <PrimaryButton
-            className={clsx(styles.menuBtn, {
-              [styles.hideLink]: showMenuOptions,
-            })}
-            key={item}
-          >
-            {item}
-          </PrimaryButton>
+          <a href={getURLMapping[item]} key={item}>
+            <PrimaryButton
+              className={clsx(styles.menuBtn, {
+                [styles.hideLink]: showMenuOptions,
+              })}
+            >
+              {item}
+            </PrimaryButton>
+          </a>
         ))}
       </div>
     </Box>
   );
 }
-
-export default NavBar;

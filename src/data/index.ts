@@ -9,11 +9,11 @@ import {
 } from "../model";
 
 export const NavBarButtonsData: Array<string> = [
-  "Contact",
-  "Resume",
   "About",
-  "Certificates",
   "Projects",
+  "Skills",
+  "Certificates",
+  "Contact",
 ];
 
 export const AbtMeButtonData: AboutMeProps = {

@@ -3,6 +3,7 @@ import React from "react";
 import { AboutMeProps } from "../model";
 import { AppColorsData } from "../themes/ColoPallets";
 import PrimaryButton from "../styledComponents/PrimaryButton";
+import { getURLMapping } from "../utils/common";
 
 function AboutMe({
   AbtMeButtons,
@@ -99,7 +100,9 @@ function AboutMe({
         }}
       >
         {AbtMeButtons.map((item, index) => (
-          <PrimaryButton key={item}>{item}</PrimaryButton>
+          <a href={getURLMapping[item]} key={item}>
+            <PrimaryButton>{item}</PrimaryButton>
+          </a>
         ))}
       </div>
     </Box>

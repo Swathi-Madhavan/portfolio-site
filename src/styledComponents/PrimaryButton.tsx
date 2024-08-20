@@ -20,6 +20,7 @@ const PrimaryButton = styled(Button)({
   textAlign: "center",
   textTransform: "none",
   fontWeight: "500px",
+  textWrap: "nowrap",
   "&:hover": {
     backgroundColor: AppColorsData.secondaryDarkColor,
     color: AppColorsData.whiteColor,
