@@ -13,6 +13,7 @@
 
 * {
   position: relative;
+  font-family: "Poppins", sans-serif;
 }
 body {
   width: 100%;
@@ -20,9 +21,4 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--prmary-color);
   position: relative;
-}
-
- {
-  transition: transform 0.3s ease;
-  transform: translateX(100%);
 }

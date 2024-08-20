@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { SkillsProps } from "../model";
 import { Box, Typography } from "@mui/material";
 import { AppColorsData } from "../themes/ColoPallets";
@@ -10,6 +10,24 @@ import FronEndIcon from "../assets/Images/FronEndIcon";
 import Divider from "../styledComponents/Divider";
 
 function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
+  const skillsList = SkillsDescDataInfo[0].skillsTypes;
+
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+  const handleIncrease = useCallback(() => {
+    const nextIndex = selectedIndex + 1;
+    if (nextIndex < skillsList.length) {
+      setSelectedIndex(nextIndex);
+    }
+  }, [selectedIndex, skillsList.length]);
+
+  const handleDecrease = useCallback(() => {
+    const nextIndex = selectedIndex - 1;
+    if (nextIndex >= 0) {
+      setSelectedIndex(nextIndex);
+    }
+  }, [selectedIndex]);
+
   return (
     <Box
       sx={{
@@ -49,9 +67,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
           marginTop: "87px",
         }}
       >
-        <PrimaryButton sx={{}}>
-          {SkillsDescDataInfo[0].skillsButtons}
-        </PrimaryButton>
+        <PrimaryButton sx={{}}>{skillsList[selectedIndex]}</PrimaryButton>
         <div
           style={{
             width: "100%",
@@ -62,7 +78,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
             gap: "70px",
           }}
         >
-          <ForwardButton>
+          <ForwardButton onClick={handleDecrease}>
             <LeftArrowIcon />
           </ForwardButton>
 
@@ -98,7 +114,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
             </Box>
           </Box>
 
-          <ForwardButton>
+          <ForwardButton onClick={handleIncrease}>
             <RightArrowIcon />
           </ForwardButton>
         </div>

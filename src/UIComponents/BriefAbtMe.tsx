@@ -69,8 +69,7 @@ function BriefAbtMe({ text, abtPara }: Readonly<BriefAbtProps>) {
           sx={{
             fontSize: "18px",
             fontWeight: "300px",
-            fontStretch: "normal",
-            fontStyle: "normal",
+            fontFamily: "Poppins",
             color: AppColorsData.whiteColor,
           }}
         >

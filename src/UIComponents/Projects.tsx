@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { ProjectsProps } from "../model";
 import { AppColorsData } from "../themes/ColoPallets";
 import PrimaryButton from "../styledComponents/PrimaryButton";
@@ -8,12 +8,25 @@ import MobileIcon from "../assets/Images/MobileIcon";
 import ComputerIcon from "../assets/Images/ComputerIcon";
 import BrainIconRect from "../assets/Images/BrainIconRect";
 import Divider from "../styledComponents/Divider";
+import GitHubIcon from "../assets/Images/GitHubIcon";
+
+const imageMap: Record<string, React.ReactNode> = {
+  portfolioApp: <BrainIconRect />,
+  todoApp: <MobileIcon />,
+  calcApp: <ComputerIcon />,
+};
 
 function Projects({
   project,
   projButtons,
   projectDataInfo,
 }: Readonly<ProjectsProps>) {
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+  const handleSelect = useCallback((index: number) => {
+    setSelectedIndex(index);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -51,7 +64,12 @@ function Projects({
         }}
       >
         {projButtons.map((item, index) => (
-          <PrimaryButton key={String(index)}>{item}</PrimaryButton>
+          <PrimaryButton
+            key={`project-${String(index)}`}
+            onClick={() => handleSelect(index)}
+          >
+            {item}
+          </PrimaryButton>
         ))}
       </div>
       <div
@@ -80,7 +98,7 @@ function Projects({
             { id: "1", icon: <BrainIcon /> },
             { id: "2", icon: <MobileIcon /> },
             { id: "3", icon: <ComputerIcon /> },
-          ].map((icon) => (
+          ].map((icon, index) => (
             <Button
               sx={{
                 width: "157px",
@@ -93,6 +111,7 @@ function Projects({
                 },
               }}
               key={icon.id}
+              onClick={() => handleSelect(index)}
             >
               {icon.icon}
             </Button>
@@ -101,7 +120,7 @@ function Projects({
         <div
           style={{
             width: "466px",
-            height: "543px",
+            height: "100%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
@@ -110,6 +129,7 @@ function Projects({
             boxShadow:
               "18px 18px 36px 0px rgba(0, 0, 0, 0.25), -18px -18px 36px 0px rgba(255, 255, 255, 0.05)",
             backgroundColor: "#232732",
+            gap: "20px",
           }}
         >
           <Box
@@ -117,11 +137,13 @@ function Projects({
               top: "-20px",
               borderRadius: "16px",
               "& .MuiSvgIcon-root": {
-                fontSize: "400px",
+                fontSize: selectedIndex !== 0 ? "250px" : "400px",
+                marginTop: selectedIndex !== 0 ? "40%" : "0px",
+                marginBottom: selectedIndex !== 0 ? "10%" : "0px",
               },
             }}
           >
-            <BrainIconRect />
+            {imageMap[projectDataInfo[selectedIndex].projectImg]}
           </Box>
           <Typography
             sx={{
@@ -134,7 +156,7 @@ function Projects({
               color: AppColorsData.whiteColor,
             }}
           >
-            {projectDataInfo[0].projectName}
+            {projectDataInfo[selectedIndex].projectName}
           </Typography>
           <Typography
             sx={{
@@ -148,8 +170,26 @@ function Projects({
               marginTop: "24px",
             }}
           >
-            {projectDataInfo[0].projectDesc}
+            {projectDataInfo[selectedIndex].projectDesc}
           </Typography>
+          <Button
+            sx={{
+              height: "50px",
+              width: "50%",
+              fontSize: "50px",
+              "& .MuiSvgIcon-root": {
+                fontSize: "50px",
+              },
+            }}
+          >
+            <a
+              href={`${projectDataInfo[selectedIndex].projGitLink}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubIcon />
+            </a>
+          </Button>
         </div>
       </div>
     </Box>
