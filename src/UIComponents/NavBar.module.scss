@@ -1,0 +1,47 @@
+.menuBtn {
+  display: block;
+}
+.linksRoot {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 71px;
+  position: relative;
+  justify-content: space-around;
+}
+
+.btn {
+  flex: 1;
+  color: #ffffff;
+  display: none;
+}
+
+.hideLink {
+  color: #fff;
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    display: block !important;
+    float: right !important;
+  }
+
+  .linksRoot {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menuBtn {
+    flex: 1;
+    display: none !important;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .hideLink {
+    transition: display cubic-bezier(0.075, 0.82, 0.165, 1) 500ms !important;
+    display: flex !important;
+  }
+}
