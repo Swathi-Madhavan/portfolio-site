@@ -1,4 +1,5 @@
 import { createSvgIcon } from "@mui/material";
+import React from "react";
 
 const ComputerIcon = createSvgIcon(
   <svg

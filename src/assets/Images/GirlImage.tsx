@@ -1,5 +1,5 @@
-import * as React from "react";
 import { createSvgIcon } from "@mui/material";
+import React from "react";
 
 const GirlIcon = createSvgIcon(
   <svg

@@ -4,10 +4,9 @@ import HamBurgerIcon from "../assets/Images/UiIcons/HamBurgerIcon";
 import PrimaryButton from "../styledComponents/PrimaryButton";
 import HamburgerMenu from "../styledComponents/HamburgerMenu";
 import styles from "./NavBar.module.scss";
-import { useState } from "react";
 import clsx from "clsx";
 import { getURLMapping } from "../utils/common";
-import React from "react";
+import React, { useState } from "react";
 
 export default function NavBar() {
   const [showMenuOptions, setShowMenuOptions] = useState(false);
