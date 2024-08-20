@@ -54,7 +54,7 @@ function AboutMe({
       >
         {intro}
       </Typography>
-      <Typography
+      <Typography 
         sx={{
           fontFamily: "Poppins",
           fontSize: "38px",
@@ -64,6 +64,8 @@ function AboutMe({
           textAlign: "center",
           marginTop: "8px",
           color: AppColorsData.whiteColor,
+          animation: "typing 2s steps(18), cursor .4s step-end infinite alternate"
+          
         }}
       >
         {profession}
