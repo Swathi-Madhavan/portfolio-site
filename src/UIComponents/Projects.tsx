@@ -68,6 +68,7 @@ export default function Projects({
             <PrimaryButton
               key={`project-${String(index)}`}
               onClick={() => handleSelect(index)}
+              id={item}
             >
               {item}
             </PrimaryButton>

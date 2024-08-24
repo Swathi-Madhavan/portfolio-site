@@ -32,7 +32,7 @@ export default function NavBar() {
 
       <div className={styles.linksRoot}>
         {NavBarButtonsData.map((item) => (
-          <a href={getURLMapping[item]} key={item}>
+          <a href={getURLMapping[item]} key={item} id={item}>
             <PrimaryButton
               className={clsx(styles.menuBtn, {
                 [styles.hideLink]: showMenuOptions,

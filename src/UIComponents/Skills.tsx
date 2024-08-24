@@ -68,7 +68,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
             marginTop: "87px",
           }}
         >
-          <PrimaryButton sx={{}}>{skillsList[selectedIndex]}</PrimaryButton>
+          <PrimaryButton id="skillsBtn">{skillsList[selectedIndex]}</PrimaryButton>
           <div
             style={{
               width: "100%",
@@ -79,7 +79,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
               gap: "70px",
             }}
           >
-            <ForwardButton onClick={handleDecrease}>
+            <ForwardButton onClick={handleDecrease} id="prevSkillsBtn">
               <LeftArrowIcon />
             </ForwardButton>
 
@@ -115,7 +115,7 @@ function Skills({ SkillsTxt, SkillsDescDataInfo }: Readonly<SkillsProps>) {
               </Box>
             </Box>
 
-            <ForwardButton onClick={handleIncrease}>
+            <ForwardButton onClick={handleIncrease} id="nextSkillsBtn">
               <RightArrowIcon />
             </ForwardButton>
           </div>
