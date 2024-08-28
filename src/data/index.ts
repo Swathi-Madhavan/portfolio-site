@@ -14,20 +14,23 @@ export const NavBarButtonsData: Array<string> = [
   "Skills",
   "Certificates",
   "Contact",
+  "Feedback",
 ];
 
 export const AbtMeButtonData: AboutMeProps = {
   AbtMeButtons: ["Learn More", "Contact Me"],
-  AbtMeTxt: "A highly motivated web developer, eager to apply my skills in HTML, CSS, JavaScript, and modern frameworks to real-world projects. Actively seeking opportunities to contribute to innovative web solutions and advance the industry.",
+  AbtMeTxt:
+    "A highly motivated web developer, eager to apply my skills in HTML, CSS, JavaScript, and modern frameworks to real-world projects. Actively seeking opportunities to contribute to innovative web solutions and advance the industry.",
   greet: "Hey",
   intro: "I'm Swathi Madhavan",
   profession: "Software Engineer",
 };
 
 export const BriefAbtMeData: BriefAbtProps = {
-    text: "About Me",
-    abtPara: "Passionate Software Developer specializing in Networking, with 1.6 years of expertise in C programming and Linux environments. Skilled in creating dynamic single-page applications using ReactJS, TypeScript, and modern web technologies, including Redux and responsive design. Strong problem solving abilities and proficient in development tools such as Git and JIRA.Committed to delivering clean, reusable code and conducting thorough code reviews."
-}
+  text: "About Me",
+  abtPara:
+    "Passionate Software Developer specializing in Networking, with 1.6 years of expertise in C programming and Linux environments. Skilled in creating dynamic single-page applications using ReactJS, TypeScript, and modern web technologies, including Redux and responsive design. Strong problem solving abilities and proficient in development tools such as Git and JIRA.Committed to delivering clean, reusable code and conducting thorough code reviews.",
+};
 
 export const ProjectsData: ProjectsProps = {
   project: "Projects",
@@ -77,7 +80,7 @@ export const SkillsData: SkillsProps = {
         "RESTful API",
         "Material UI",
         "Git",
-        "GitHub"
+        "GitHub",
       ],
       skillsTypesImg: [" "],
     },

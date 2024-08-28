@@ -7,12 +7,17 @@ import styles from "./NavBar.module.scss";
 import clsx from "clsx";
 import { getURLMapping } from "../utils/common";
 import React, { useState } from "react";
+import localforage from "localforage";
 
 export default function NavBar() {
   const [showMenuOptions, setShowMenuOptions] = useState(false);
 
   const handleChange = () => {
     setShowMenuOptions((prev) => !prev);
+  };
+
+  const handleShowForm = (name: string) => {
+    console.log("data form", localforage.getItem("formBuilder"));
   };
 
   return (
@@ -37,6 +42,7 @@ export default function NavBar() {
               className={clsx(styles.menuBtn, {
                 [styles.hideLink]: showMenuOptions,
               })}
+              onClick={() => handleShowForm(item)}
             >
               {item}
             </PrimaryButton>

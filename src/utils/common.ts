@@ -6,4 +6,5 @@ export const getURLMapping: Record<string, string> = {
   Skills: "#skills",
   "Learn More": "#skills",
   "Contact Me": "#about-me",
+  Feedback: "#",
 };
