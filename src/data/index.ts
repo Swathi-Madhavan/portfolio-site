@@ -14,7 +14,6 @@ export const NavBarButtonsData: Array<string> = [
   "Skills",
   "Certificates",
   "Contact",
-  "Feedback",
 ];
 
 export const AbtMeButtonData: AboutMeProps = {
